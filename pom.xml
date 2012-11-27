@@ -2,8 +2,8 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.versionone</groupId>
-  <artifactId>V1SDK</artifactId>
-  <version>0.0.1</version>
+  <artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
+  <version>1.0.0.0</version>
   <packaging>jar</packaging>
   <name>VersionOne.SDK.Java.ObjectModel</name>
   <url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
