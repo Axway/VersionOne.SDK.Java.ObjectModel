@@ -68,7 +68,7 @@ public class AssetsStateTester extends BaseSDKTester {
 
     protected V1Instance getProxyInstance() {
         if (proxyInstance == null) {
-        	proxyInstance = new V1Instance("http://localhost:" + port + "/V1JavaSDKTests/", "1", "1");
+        	proxyInstance = new V1Instance("http://localhost/V1SDKTests/", "admin", "admin");
         	proxyInstance.validate();
         }
         return proxyInstance;
