@@ -39,9 +39,8 @@ public abstract class BaseSDKTester {
     protected String getApplicationPath() {
         String url = System.getProperties().getProperty(TEST_URL_PROPERTY);
 
-        if (null == url) {
-        	//url = "http://integsrv01/VersionOneSDK/";
-        	url = "http://localhost/V1SDKTests";
+        if (null == url) {        	
+        	url = "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests";
         	
         } else if (!url.endsWith("/")) {
             url += "/";
