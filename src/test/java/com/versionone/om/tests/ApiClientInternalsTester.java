@@ -35,12 +35,10 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 
 	@After
 	public void clearCookies() {
-		V1Instance connection = new V1Instance(
-				"http://localhost:" + port + "/", getUsername(), getPassword());
+		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 		connection.getCookiesJar().deleteAllCookies();
 		connection.getCustomHttpHeaders().clear();
-		V1Instance connection2 = new V1Instance(
-				"http://localhost:" + port + "/", getUsername(), getPassword());
+		V1Instance connection2 = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 		connection2.getCookiesJar().deleteAllCookies();
 		connection.getCustomHttpHeaders().clear();
 	}
@@ -51,8 +49,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException {
 
-		V1Instance connection = new V1Instance(
-				"http://localhost:" + port + "/", getUsername(), getPassword());
+		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 		connection.getCustomHttpHeaders().put(paramName, paramValue);
 		ApiClientInternals test = connection.getApiClient();
 
@@ -151,8 +148,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 		String cookieValue2 = "cookie_value2";
 		String[] domens = new String[]{"localhost", "127.0.0.1"};
 		for(String domen : domens) {
-			V1Instance connection = new V1Instance(
-					"http://" + domen + ":" + port + "/", getUsername(), getPassword());
+			V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 			TestServer testServer = new TestServer(port, Arrays.asList(cookieName1
 					+ "=" + cookieValue1), 4);
 			runServer(testServer);
@@ -219,8 +215,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 		TestServer testServer = new TestServer(port, null, 2);
 		runServer(testServer);
 
-		V1Instance connection = new V1Instance(
-				"http://localhost:" + port + "/", getUsername(), getPassword());
+		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 		connection.getCustomHttpHeaders().put(paramName, paramValue);
 		try {
 			connection.validate();
