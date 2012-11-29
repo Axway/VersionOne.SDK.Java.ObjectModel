@@ -8,6 +8,7 @@ import java.util.Map;
 import com.versionone.om.*;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 
 import com.versionone.DB.DateTime;
 import com.versionone.om.filters.PrimaryWorkitemFilter;
@@ -114,9 +115,10 @@ public class IterationTester extends BaseSDKTester {
         Assert.assertEquals(new DateTime(endDate), newIteration.getEndDate());
     }
 
+    //@Ignore("Exception:  Error writing to output stream.") 
     @Test
     public void testCreateCustomIteration() {
-        final String scope = "Scope:1017";
+        final String scope = "Scope:1018";
         final String iterationName = "Month 7 & 8";
         final String dateStart = "2008-03-05";
         final String dateEnd = "2008-05-03";
