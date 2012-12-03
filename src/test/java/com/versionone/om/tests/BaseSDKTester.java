@@ -17,8 +17,7 @@ import org.junit.After;
 
 public abstract class BaseSDKTester {
     protected final static String SCOPE_ZERO = "Scope:0";
-    protected final static double ESTIMATES_PRECISION = 0.0001;
-    protected final static String TEST_URL_PROPERTY = "test.websiteurl";
+    protected final static double ESTIMATES_PRECISION = 0.0001;    
     private V1Instance instance;
     private AssetID sandboxProjectID;
     private AssetID sandboxIterationID;
@@ -36,16 +35,8 @@ public abstract class BaseSDKTester {
         return defaultSchemeOid;
     }
 
-    protected String getApplicationPath() {
-        String url = System.getProperties().getProperty(TEST_URL_PROPERTY);
-
-        if (null == url) {        	
-        	url = "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests";
-        	
-        } else if (!url.endsWith("/")) {
-            url += "/";
-        }
-        return url;
+    protected String getApplicationPath() {       	
+        	return "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests";
     }
 
     protected String getUsername() {
