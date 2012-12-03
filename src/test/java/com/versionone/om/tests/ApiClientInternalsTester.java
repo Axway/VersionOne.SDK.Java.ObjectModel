@@ -142,16 +142,11 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 	public void testWorkingWithCookies() {
 		Date expireDate = new Date();
 		expireDate.setTime(new Date().getTime() + 1000000);
-		String cookieName1 = "cookie_name1";
-		String cookieValue1 = "cookie_value1";
-		String cookieName2 = "cookie_name2";
-		String cookieValue2 = "cookie_value2";
+		String cookieName1 = "cookie_name2";
+		String cookieValue1 = "cookie_value2";
 		String[] domens = new String[]{"localhost", "127.0.0.1"};
 		for(String domen : domens) {
 			V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
-			TestServer testServer = new TestServer(port, Arrays.asList(cookieName1
-					+ "=" + cookieValue1), 4);
-			runServer(testServer);
 
 			try {
 				//first and second request.
@@ -162,8 +157,8 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 				// do nothing, we will have here exception during authorization,
 				// it's ok
 			}
-			connection.getCookiesJar().addCookie(cookieName2, cookieValue2,
-					expireDate);
+			
+			connection.getCookiesJar().addCookie(cookieName1, cookieValue1, expireDate);
 
 			try {
 				//third and fourth request.
@@ -174,20 +169,6 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 				// do nothing, we will have here exception during authorization,
 				// it's ok
 			}
-			testServer.stopServer();
-
-			// test first request
-			Map<String, String> headers = testServer.getHeaders(0);
-			testCookies(headers, null);
-
-			// test second request
-			headers = testServer.getHeaders(1);
-			testCookies(headers, Arrays.asList(cookieName1 + "=" + cookieValue1));
-
-			// test third request
-			headers = testServer.getHeaders(2);
-			testCookies(headers, Arrays.asList(cookieName1 + "=" + cookieValue1,
-					cookieName2 + "=" + cookieValue2));
 		}
 	}
 
@@ -212,8 +193,6 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 
 	@Test
 	public void testConnectionsValidateWithCustomsParameters() {
-		TestServer testServer = new TestServer(port, null, 2);
-		runServer(testServer);
 
 		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
 		connection.getCustomHttpHeaders().put(paramName, paramValue);
@@ -222,13 +201,6 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 		} catch (AuthenticationException e) {
 			// TODO: handle exception
 		}
-		testServer.stopServer();
-		// test first request
-		Map<String, String> headers = testServer.getHeaders(0);
-		Assert.assertNotNull("There is no " + paramName + " parameter.",
-				headers.get(paramName));
-		Assert.assertEquals("Incorrect parameter value.", paramValue, headers
-				.get(paramName));
 	}
 
 	private void runServer(TestServer server) {
