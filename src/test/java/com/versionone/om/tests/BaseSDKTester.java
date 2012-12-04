@@ -35,8 +35,14 @@ public abstract class BaseSDKTester {
         return defaultSchemeOid;
     }
 
-    protected String getApplicationPath() {       	
-        	return "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests";
+    protected String getApplicationPath() {
+        String envar =  System.getProperty("test.websiteurl"); // test.websiteurl provided by maven POM
+        if (envar == null)
+            envar = System.getenv("TEST_URL"); // System environment provided by jenkins, junit config, etc
+        if (envar == null) 
+            throw new IllegalArgumentException("You must specify the test instance URL to run tests.");
+            //envar = "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests";
+        return envar;
     }
 
     protected String getUsername() {
