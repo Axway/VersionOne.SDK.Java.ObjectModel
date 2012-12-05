@@ -163,9 +163,8 @@ public class AttachmentTester extends BaseSDKTester {
         try {
             newAttachment.writeTo(output);
             input = AttachmentTester.class.getResourceAsStream(fileName);
-            input.mark(0);
+            if (input != null) input.mark(0);
         } finally {
-
             if (output != null) {
                 output.close();
             }
