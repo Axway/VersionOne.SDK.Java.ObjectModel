@@ -3,6 +3,7 @@ package com.versionone.om.tests;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
@@ -136,12 +137,12 @@ public class AttachmentTester extends BaseSDKTester {
     @Test
     public void testCreateFromFile() throws IOException,
             ApplicationUnavailableException {
-        final String fileName = "logo.png";
+        final String fileName = "./logo.png";
         final int fileSize = 3 * 1024; // 3k
         Project project = getInstance().get().projectByID(SCOPE_ZERO);
         Attachment attachment;
         InputStream input = AttachmentTester.class
-                .getResourceAsStream("./" + fileName);
+                .getResourceAsStream(fileName);
 
         try {
             attachment = project.createAttachment("Second Attachment",
@@ -173,7 +174,8 @@ public class AttachmentTester extends BaseSDKTester {
         InputStream expected = new ByteArrayInputStream(output.toByteArray());
 
         try {
-        	Assert.assertNotNull("input stream is null", input);
+        	String currentDir = new File(fileName).getAbsolutePath();
+        	Assert.assertNotNull("input stream is null.  no resource available at:  " + currentDir, input);
             Assert.assertTrue(StreamComparer.compareStream(input, expected));
         } finally {
             if (expected != null) {
