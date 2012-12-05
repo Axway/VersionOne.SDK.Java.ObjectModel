@@ -35,10 +35,10 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 
 	@After
 	public void clearCookies() {
-		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+		V1Instance connection = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
 		connection.getCookiesJar().deleteAllCookies();
 		connection.getCustomHttpHeaders().clear();
-		V1Instance connection2 = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+		V1Instance connection2 = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
 		connection2.getCookiesJar().deleteAllCookies();
 		connection.getCustomHttpHeaders().clear();
 	}
@@ -49,7 +49,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 			NoSuchFieldException, IllegalArgumentException,
 			IllegalAccessException {
 
-		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+		V1Instance connection = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
 		connection.getCustomHttpHeaders().put(paramName, paramValue);
 		ApiClientInternals test = connection.getApiClient();
 
@@ -146,7 +146,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 		String cookieValue1 = "cookie_value2";
 		String[] domens = new String[]{"localhost", "127.0.0.1"};
 		for(String domen : domens) {
-			V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+			V1Instance connection = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
 
 			try {
 				//first and second request.
@@ -194,7 +194,7 @@ public class ApiClientInternalsTester extends BaseSDKTester {
 	@Test
 	public void testConnectionsValidateWithCustomsParameters() {
 
-		V1Instance connection = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+		V1Instance connection = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
 		connection.getCustomHttpHeaders().put(paramName, paramValue);
 		try {
 			connection.validate();

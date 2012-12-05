@@ -35,10 +35,11 @@ public abstract class BaseSDKTester {
         return defaultSchemeOid;
     }
 
-    protected String getApplicationPath() {  
+    protected String getApplicationUrl() {  
     	// test.websiteurl provided by maven POM. System environment provided by jenkins, junit eclipse config, etc
         String envar =  System.getProperty("test.websiteurl", System.getenv("TEST_URL")); 
         if (envar == null) envar = "http://localhost/MyTestInstanceHere/";
+        if (envar.endsWith("/") == false) envar.concat("/"); //ending slash is important
         return envar;
     }
 
@@ -170,7 +171,7 @@ public abstract class BaseSDKTester {
 
     protected V1Instance getInstance() {
         if (instance == null) {
-            instance = new V1Instance(getApplicationPath(), getUsername(), getPassword());
+            instance = new V1Instance(getApplicationUrl(), getUsername(), getPassword());
             instance.validate();
         }
         return instance;

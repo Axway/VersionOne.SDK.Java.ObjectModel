@@ -25,7 +25,7 @@
         <version>2.12.4</version>
         <configuration>
           <systemPropertyVariables>
-          	<test.websiteurl>http://localhost/VersionOne.SDK.Java.ObjectModel.Tests</test.websiteurl>           
+          	<test.websiteurl>http://localhost/VersionOne.SDK.Java.ObjectModel.Tests/</test.websiteurl>           
           </systemPropertyVariables>
           <skipTests>false</skipTests>
           <includes>

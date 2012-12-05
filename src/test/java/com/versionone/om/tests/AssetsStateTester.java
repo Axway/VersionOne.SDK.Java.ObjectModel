@@ -68,7 +68,7 @@ public class AssetsStateTester extends BaseSDKTester {
 
     protected V1Instance getProxyInstance() {
         if (proxyInstance == null) {
-        	proxyInstance = new V1Instance(getApplicationPath(), getUsername(), getUsername());
+        	proxyInstance = new V1Instance(getApplicationUrl(), getUsername(), getUsername());
         	proxyInstance.validate();
         }
         return proxyInstance;
@@ -203,7 +203,7 @@ public class AssetsStateTester extends BaseSDKTester {
 				throws ConnectionException {
 			//get URL and request method
 			V1RequestInfo urlAndType = getHeaderFirstLineData(in);
-			String path = getApplicationPath() + urlAndType.url;
+			String path = getApplicationUrl() + urlAndType.url;
 			HttpURLConnection request;
 			AuthCacheValue.setAuthCache(new AuthCacheImpl());
 			Authenticator.setDefault(new Credentials(getUsername(), getPassword()));
@@ -276,7 +276,7 @@ public class AssetsStateTester extends BaseSDKTester {
 		}
 
 		private String getHostName() {
-			String domen  = getApplicationPath();
+			String domen  = getApplicationUrl();
 			URL url = null;
 			try {
 				url = new URL(domen);

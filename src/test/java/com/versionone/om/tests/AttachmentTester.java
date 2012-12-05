@@ -47,9 +47,9 @@ public class AttachmentTester extends BaseSDKTester {
     public void testURLTester() {
         Attachment attachment = getInstance().get().attachmentByID(
                 ATTACHMENT_1783);
-        Assert.assertEquals(getApplicationPath() + "attachment.v1/1783",
+        Assert.assertEquals(getApplicationUrl() + "attachment.v1/1783",
                 attachment.getContentURL());
-        Assert.assertEquals(getApplicationPath()
+        Assert.assertEquals(getApplicationUrl()
                 + "assetdetail.v1/?oid=" + ATTACHMENT_1783, attachment.getURL());
     }
 
