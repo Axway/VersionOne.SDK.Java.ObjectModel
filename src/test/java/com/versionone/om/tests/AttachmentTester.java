@@ -141,7 +141,7 @@ public class AttachmentTester extends BaseSDKTester {
         Project project = getInstance().get().projectByID(SCOPE_ZERO);
         Attachment attachment;
         InputStream input = AttachmentTester.class
-                .getResourceAsStream(fileName);
+                .getResourceAsStream("./" + fileName);
 
         try {
             attachment = project.createAttachment("Second Attachment",
@@ -173,6 +173,7 @@ public class AttachmentTester extends BaseSDKTester {
         InputStream expected = new ByteArrayInputStream(output.toByteArray());
 
         try {
+        	Assert.assertNotNull("input stream is null", input);
             Assert.assertTrue(StreamComparer.compareStream(input, expected));
         } finally {
             if (expected != null) {
