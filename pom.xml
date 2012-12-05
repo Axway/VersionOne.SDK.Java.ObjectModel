@@ -8,9 +8,8 @@
   <name>VersionOne.SDK.Java.ObjectModel</name>
   <url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <test.websiteurl>http://localhost/VersionOne.SDK.Java.ObjectModel.Tests</test.websiteurl>
-  </properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ </properties>
   <distributionManagement>
     <repository>
         <id>BUILDSERVER1</id>
@@ -25,6 +24,9 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.12.4</version>
         <configuration>
+          <systemPropertyVariables>
+          	<test.websiteurl>http://localhost/VersionOne.SDK.Java.ObjectModel.Tests</test.websiteurl>           
+          </systemPropertyVariables>
           <skipTests>false</skipTests>
           <includes>
             <include>**/*Tester.java</include>
