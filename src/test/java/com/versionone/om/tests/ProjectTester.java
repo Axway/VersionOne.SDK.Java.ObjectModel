@@ -60,7 +60,7 @@ public class ProjectTester extends BaseSDKTester {
     }
 
     @Test
-    public void testSimpleProjectAttributes() {
+    public void testSimpleProjectAttributes() {    	
     	
         Project project = getInstance().get().projectByID(SCOPE_ZERO);
 
@@ -69,7 +69,8 @@ public class ProjectTester extends BaseSDKTester {
         Assert.assertTrue(project.isActive());
         Assert.assertFalse(project.isClosed());
         Assert.assertNull(project.getParentProject());
-        Assert.assertNotNull(project.getSchedule());        
+        
+        Assert.assertNull(project.getSchedule());  //test data does not have a schedule      
         
         Duration expected1 = new Duration("14 Days");
         Duration expected2 = new Duration("0 Days");
