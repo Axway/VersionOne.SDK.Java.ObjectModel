@@ -4,10 +4,12 @@ package com.versionone.om.tests;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.HashMap;
+import java.nio.channels.*;
 
 import com.versionone.om.*;
 import org.junit.Assert;
@@ -134,6 +136,23 @@ public class AttachmentTester extends BaseSDKTester {
         Assert.assertEquals(content, output.toString());
     }
 
+    
+    private void CopyLogoFileToTestDirectory(){
+    	String currentDir = new File(".").getAbsolutePath();
+    	String sourcePath = currentDir + "\\src\\test\\java\\com\\versionone\\om\\tests\\logo.png";
+    	String destinationPath = currentDir + "\\target\\test-classes\\com\\versionone\\om\\tests\\logo.png";
+    	FileChannel source = null;
+        FileChannel destination = null;
+        try{
+        	//source = new FileInputStream(sourcePath).getChannel();
+        	//destination = new FileInputStream(destinationPath).getChannel();
+        	//destination.transferFrom(source, 0, source.size());
+        } finally {
+        	//if (source != null) source.close();
+        	//if (destination != null) source.close();
+        }
+    }
+    
     @Test
     public void testCreateFromFile() throws IOException,
             ApplicationUnavailableException {
@@ -173,8 +192,7 @@ public class AttachmentTester extends BaseSDKTester {
 
         InputStream expected = new ByteArrayInputStream(output.toByteArray());
 
-        try {        	
-        	Assert.assertNotNull("input stream is null", input);
+        try {
             Assert.assertTrue(StreamComparer.compareStream(input, expected));
         } finally {
             if (expected != null) {

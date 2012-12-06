@@ -61,6 +61,7 @@ public class ProjectTester extends BaseSDKTester {
 
     @Test
     public void testSimpleProjectAttributes() {
+    	
         Project project = getInstance().get().projectByID(SCOPE_ZERO);
 
         Assert.assertEquals(new DateTime("2007-09-08"), project.getBeginDate());
@@ -68,12 +69,17 @@ public class ProjectTester extends BaseSDKTester {
         Assert.assertTrue(project.isActive());
         Assert.assertFalse(project.isClosed());
         Assert.assertNull(project.getParentProject());
-        Assert.assertNotNull(project.getSchedule());
+        Assert.assertNotNull(project.getSchedule());        
+        
+        Duration expected1 = new Duration("14 Days");
+        Duration expected2 = new Duration("0 Days");
+        
+        Duration actual1 = project.getSchedule().getIterationLength();
+        Duration actual2 = project.getSchedule().getIterationGap();
+        
+        Assert.assertEquals(expected1.getDays(), actual1.getDays());
 
-        Assert.assertEquals(new Duration("14 Days"), project.getSchedule()
-                .getIterationLength());
-        Assert.assertEquals(new Duration("0 Days"), project.getSchedule()
-                .getIterationGap());
+        Assert.assertEquals(expected2.getDays(), actual2.getDays());
     }
 
     @Test

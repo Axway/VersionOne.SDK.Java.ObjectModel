@@ -19,6 +19,8 @@ public class StreamComparer {
             throws IOException {
         int i, j;
 
+        if (expected == null || actual == null) return false;
+        
         expected.reset();
         actual.reset();
 

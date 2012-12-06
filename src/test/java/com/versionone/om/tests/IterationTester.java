@@ -94,7 +94,7 @@ public class IterationTester extends BaseSDKTester {
     @Test
     public void testCreateWithSystemSuggested() {
         final String scope = "Scope:1018";
-        final String iteration21 = "Sprint 21";
+        final String iteration21 = "Iteration 21";
         final String beginDate = "2008-01-26";
         final String endDate = "2008-02-02";
 
