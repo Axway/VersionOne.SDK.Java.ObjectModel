@@ -38,8 +38,8 @@ public abstract class BaseSDKTester {
     protected String getApplicationUrl() {  
     	// test.websiteurl provided by maven POM. System environment provided by jenkins, junit eclipse config, etc
         String envar =  System.getProperty("test.websiteurl", System.getenv("TEST_URL")); 
-        if (envar == null) envar = "http://localhost/VersionOne.SDK.Java.ObjectModel.Tests/";
-        if (envar.endsWith("/") == false) envar.concat("/"); //ending slash is important
+        if (envar == null) envar = "http://ci-agent-06/MyInstanceHere";
+        if (!envar.endsWith("/")) envar = envar.concat("/"); //ending slash is important
         return envar;
     }
 
