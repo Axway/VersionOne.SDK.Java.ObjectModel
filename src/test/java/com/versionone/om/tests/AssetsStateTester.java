@@ -20,11 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
-
-import sun.net.www.protocol.http.AuthCacheImpl;
-import sun.net.www.protocol.http.AuthCacheValue;
 
 import com.versionone.apiclient.ConnectionException;
 import com.versionone.om.Effort;
@@ -205,8 +201,8 @@ public class AssetsStateTester extends BaseSDKTester {
 			V1RequestInfo urlAndType = getHeaderFirstLineData(in);
 			String path = getApplicationUrl() + urlAndType.url;
 			HttpURLConnection request;
-			AuthCacheValue.setAuthCache(new AuthCacheImpl());
-			Authenticator.setDefault(new Credentials(getUsername(), getPassword()));
+			//AuthCacheValue.setAuthCache(new AuthCacheImpl());
+			//Authenticator.setDefault(new Credentials(getUsername(), getPassword()));
 			Map<String, String> customHttpHeaders = null;
 			try {
 				customHttpHeaders = getHeaderParams(in);
