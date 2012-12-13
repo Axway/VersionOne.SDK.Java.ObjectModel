@@ -4,19 +4,22 @@ package com.versionone.om.tests;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Map;
+import java.nio.channels.FileChannel;
 import java.util.HashMap;
-import java.nio.channels.*;
+import java.util.Map;
 
-import com.versionone.om.*;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.versionone.DB.DateTime;
+import com.versionone.om.ApplicationUnavailableException;
+import com.versionone.om.Attachment;
+import com.versionone.om.AttachmentLengthExceededException;
+import com.versionone.om.Project;
+import com.versionone.om.Story;
+import com.versionone.om.StreamComparer;
 
 public class AttachmentTester extends BaseSDKTester {
     private static final String ATTACHMENT_1783 = "Attachment:1783";
