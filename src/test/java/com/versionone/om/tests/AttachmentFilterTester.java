@@ -32,17 +32,10 @@ public class AttachmentFilterTester extends BaseSDKTester {
 
         InputStream input = new ByteArrayInputStream(content.getBytes());
 
-        try {
-            attachment = project.createAttachment(attachmentName, fileName,
-                    input);
-            attachment.setDescription(description);
-        } finally {
-            try {
-                input.close();
-            } catch (IOException e) {
-                // do nothing
-            }
-        }
+        attachment = project.createAttachment(attachmentName, fileName, input);
+        attachment.setDescription(description);
+        input.close();
+
         resetInstance();
 
         AttachmentFilter filter = new AttachmentFilter();
@@ -62,16 +55,9 @@ public class AttachmentFilterTester extends BaseSDKTester {
 
         ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-        try {
-            newAttachment.writeTo(output);
-        } finally {
-
-            try {
-                output.close();
-            } catch (IOException e) {
-                // do nothing
-            }
-        }
+        newAttachment.writeTo(output);
+        output.close();
+        
         Assert.assertEquals(content, output.toString());// use ASCII
 
         attachment.delete();
