@@ -101,7 +101,7 @@
         <dependency>
         	<groupId>com.versionone</groupId>
         	<artifactId>VersionOne.SDK.Java.APIClient</artifactId>
-        	<version>1.1.3</version>
+        	<version>12.3.1.130</version>
         </dependency>
     </dependencies>
     <organization>
