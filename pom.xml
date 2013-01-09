@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.versionone</groupId>
     <artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
-    <version>1.1.1</version>
+    <version>12.1.0.150</version>
     <packaging>jar</packaging>
     <name>VersionOne.SDK.Java.ObjectModel</name>
     <url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
