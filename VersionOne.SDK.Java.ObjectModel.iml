@@ -31,6 +31,7 @@
     <orderEntry type="library" name="Maven: org.jmock:jmock-legacy:2.6.0-RC2" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:1.0" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.1_3" level="project" />
+    <orderEntry type="library" name="Maven: com.versionone:VersionOne.SDK.Java.APIClient:12.3.1.130" level="project" />
   </component>
 </module>
 
