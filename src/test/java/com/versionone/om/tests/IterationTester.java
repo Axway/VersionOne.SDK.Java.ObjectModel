@@ -2,6 +2,7 @@
 package com.versionone.om.tests;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -94,25 +95,24 @@ public class IterationTester extends BaseSDKTester {
     @Test
     public void testCreateWithSystemSuggested() {
         final String scope = "Scope:1018";
-        final String iteration21 = "Iteration 21";
+        final String iterationName = "CreateWithSystemSuggestedTest";
         final String beginDate = "2008-01-26";
         final String endDate = "2008-02-02";
 
         Project project = getInstance().get().projectByID(scope);
-        Iteration iteration = project.createIteration();
+        Iteration iteration = project.createIteration(iterationName, new DateTime(beginDate), new DateTime(endDate));
         String iterationID = iteration.getID().toString();
 
         resetInstance();
 
-        Project newProject = getInstance().get().projectByID(scope);
-        Iteration newIteration = getInstance().get().iterationByID(
-                iterationID);
+        Project retrievedProject = getInstance().get().projectByID(scope);
+        Iteration retrievedIteration = getInstance().get().iterationByID(iterationID);
 
-        Assert.assertEquals(newProject.getSchedule(), newIteration.getSchedule());
-        Assert.assertEquals(iteration21, newIteration.getName());
-        Assert.assertEquals(new DateTime(beginDate), newIteration
+        Assert.assertEquals(retrievedProject.getSchedule(), retrievedIteration.getSchedule());
+        Assert.assertEquals(iterationName, retrievedIteration.getName());
+        Assert.assertEquals(new DateTime(beginDate), retrievedIteration
                 .getBeginDate());
-        Assert.assertEquals(new DateTime(endDate), newIteration.getEndDate());
+        Assert.assertEquals(new DateTime(endDate), retrievedIteration.getEndDate());
     }
 
     //@Ignore("Exception:  Error writing to output stream.") 
