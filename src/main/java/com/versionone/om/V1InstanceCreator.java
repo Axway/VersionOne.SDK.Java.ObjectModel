@@ -1320,7 +1320,7 @@ public class V1InstanceCreator {
         expression.setAuthor(author);
         expression.setAuthoredAt(utcNow);
         expression.setContent(content);
-        conversation.getContainedExpressions().add(expression);
+        expression.setBelongsTo(conversation);
         addAttributes(expression, attributes);
         conversation.save();
 
