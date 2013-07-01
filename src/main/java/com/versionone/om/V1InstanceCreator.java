@@ -1315,6 +1315,7 @@ public class V1InstanceCreator {
      */
     public Conversation conversation(Member author, String content, Map<String, Object> attributes) {
         Conversation conversation = new Conversation(instance);
+        conversation.save();
         Expression expression = new Expression(instance);
         DateTime utcNow = new DateTime(DateTime.convertLocalToUtc(new Date()));
         expression.setAuthor(author);
@@ -1322,8 +1323,7 @@ public class V1InstanceCreator {
         expression.setContent(content);
         expression.setBelongsTo(conversation);
         addAttributes(expression, attributes);
-        conversation.save();
-
+        expression.save();
         return conversation;
     }
 
