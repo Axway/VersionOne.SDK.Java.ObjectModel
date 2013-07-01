@@ -95,7 +95,8 @@ public class WrapperManagerTester extends TesterBase {
         expectedMap.put("Schedule", new Class[] { Schedule.class });
         expectedMap.put("Message", new Class[] { Message.class });
         expectedMap.put("MessageReceipt", new Class[] { MessageReceipt.class });
-        expectedMap.put("Expression", new Class[] { Conversation.class });
+        expectedMap.put("Conversation", new Class[] { Conversation.class });
+        expectedMap.put("Expression", new Class[] { Expression.class });
 
         // Invoke method
         try {
