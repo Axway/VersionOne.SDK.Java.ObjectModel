@@ -1,17 +1,11 @@
 /*(c) Copyright 2008, VersionOne, Inc. All rights reserved. (c)*/
 package com.versionone.om;
 
-import java.util.Collection;
-import java.util.Map;
+import com.versionone.om.filters.*;
 
-import com.versionone.om.filters.EffortFilter;
-import com.versionone.om.filters.EpicFilter;
-import com.versionone.om.filters.IssueFilter;
-import com.versionone.om.filters.PrimaryWorkitemFilter;
-import com.versionone.om.filters.RequestFilter;
-import com.versionone.om.filters.SecondaryWorkitemFilter;
-import com.versionone.om.filters.ThemeFilter;
-import com.versionone.om.filters.WorkitemFilter;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Represents a user or member in the VersionOne system.
@@ -139,9 +133,9 @@ public class Member extends BaseAsset {
     }
 
     /**
-     * @return Conversation messages created by the member.
+     * @return Expression messages created by the member.
      */
-    public Collection<Conversation> getExpressions() {
+    public Collection<Expression> getExpressions() {
     	return getMultiRelation("Expressions");
     }
 
@@ -334,15 +328,19 @@ public class Member extends BaseAsset {
     /**
      * Creates conversation which mentioned this member.
      *
-     * @param author Author of conversation.
-     * @param content Content of conversation.
+     * @param author Author of expression in conversation.
+     * @param content Content of expression in conversation.
      * @return Created conversation.
      */
     @Override
     public Conversation createConversation(Member author, String content) {
         Conversation conversation = getInstance().create().conversation(author, content);
-        conversation.getMentions().add(this);
-        conversation.save();
+        Iterator<Expression> expressionIterator = conversation.getContainedExpressions().iterator();
+        if (expressionIterator.hasNext())
+        {
+            expressionIterator.next().getMentions().add(this);
+            conversation.save();
+        }
         return conversation;
     }
 
@@ -356,7 +354,12 @@ public class Member extends BaseAsset {
     @Override
     public Conversation createConversation(Member author, String content, Map<String, Object> attributes) {
         Conversation conversation = getInstance().create().conversation(author, content, attributes);
-        conversation.getMentions().add(this);
+        Iterator<Expression> expressionIterator = conversation.getContainedExpressions().iterator();
+        if (expressionIterator.hasNext())
+        {
+            expressionIterator.next().getMentions().add(this);
+            conversation.save();
+        }
         conversation.save();
         return conversation;
     }

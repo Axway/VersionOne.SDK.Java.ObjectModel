@@ -1,19 +1,16 @@
 package com.versionone.om.filters;
 
+import com.versionone.apiclient.IFilterTerm;
+import com.versionone.apiclient.TokenTerm;
+import com.versionone.om.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.versionone.apiclient.IFilterTerm;
-import com.versionone.apiclient.TokenTerm;
-import com.versionone.om.BaseAsset;
-import com.versionone.om.Conversation;
-import com.versionone.om.Entity;
-import com.versionone.om.Member;
-
 /**
- * Filter for getting Expression/Conversation.
+ * Filter for getting Expression.
  */
-public class ConversationFilter extends EntityFilter {
+public class ExpressionFilter extends EntityFilter {
 
     /**
      * State of the asset.
@@ -33,7 +30,7 @@ public class ConversationFilter extends EntityFilter {
 
 	@Override
 	public Class<? extends Entity> getEntityType() {
-		return Conversation.class;
+		return Expression.class;
 	}
 
 	/**
@@ -49,22 +46,22 @@ public class ConversationFilter extends EntityFilter {
     /**
      * Filter on the Conversation property.
      */
-    public List<Conversation> conversation = newList();
+    public List<Conversation> belongsTo = newList();
 
     /**
      * Filter on the ExpressionsInConversation property.
      */
-    public List<Conversation> expressionsInConversation = newList();
+    //public List<Expression> expressionsInConversation = newList();
 
     /**
      * Filter on the InReplyTo property.
      */
-    public List<Conversation> inReplyTo = newList();
+    public List<Expression> inReplyTo = newList();
 
     /**
      * Filter on the Replies property.
      */
-    public List<Conversation> replies = newList();
+    public List<Expression> replies = newList();
 
     /**
      * Filter on the Mentions property.
@@ -96,8 +93,8 @@ public class ConversationFilter extends EntityFilter {
 
         builder.relation("Author", author);
         builder.comparison("AuthoredAt", authoredAt);
-        builder.relation("Conversation", conversation);
-        builder.multiRelation("ExpressionsInConversation", expressionsInConversation);
+        builder.relation("BelongsTo", belongsTo);
+        //builder.multiRelation("ExpressionsInConversation", expressionsInConversation);
         builder.relation("InReplyTo", inReplyTo);
         builder.multiRelation("Replies", replies);
         builder.multiRelation("Mentions", mentions);

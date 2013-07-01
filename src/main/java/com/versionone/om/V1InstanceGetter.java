@@ -338,14 +338,24 @@ public class V1InstanceGetter {
     }
 
     /**
-     * Get Conversation/Expression filtered by the criteria specified in the passed filter.
+     * Get Expression filtered by the criteria specified in the passed filter.
      *
      * @param filter Limit the items returned. If null, then all items returned.
      * @return ICollection of the items as specified in the filter.
      */
-    public Collection<Conversation> conversations(ConversationFilter filter) {
-        return get(Conversation.class, (filter != null) ? filter : new ConversationFilter());
+    public Collection<Expression> expressions(ExpressionFilter filter) {
+        return get(Expression.class, (filter != null) ? filter : new ExpressionFilter());
     }
+
+    /**
+     * Get Conversation filtered by the criteria specified in the passed filter.
+     *
+     * @param filter Limit the items returned. If null, then all items returned.
+     * @return ICollection of the items as specified in the filter.
+     */
+/*    public Collection<Conversation> conversations(ConversationFilter filter) {
+        return get(Conversation.class, (filter != null) ? filter : new ConversationFilter());
+    }*/
 
     Collection<MessageReceipt> messageReceipts(MessageReceiptFilter filter) {
         return get(MessageReceipt.class, (filter != null) ? filter : new MessageReceiptFilter());
@@ -949,6 +959,16 @@ public class V1InstanceGetter {
      */
     public Conversation conversationByID(AssetID id) {
         return byID(Conversation.class, id);
+    }
+
+    /**
+     * Returns an Expression with the given ID or null if the ID is invalid.
+     *
+     * @param id ID of the Expression to retrieve.
+     * @return an instance of an Expression or null if ID is invalid.
+     */
+    public Expression expressionByID(AssetID id) {
+        return byID(Expression.class, id);
     }
 
     /**

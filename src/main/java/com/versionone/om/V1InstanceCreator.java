@@ -1,8 +1,8 @@
 /*(c) Copyright 2008, VersionOne, Inc. All rights reserved. (c)*/
 package com.versionone.om;
 
-import com.versionone.Duration;
 import com.versionone.DB.DateTime;
+import com.versionone.Duration;
 import com.versionone.apiclient.MimeType;
 
 import java.io.InputStream;
@@ -1286,9 +1286,9 @@ public class V1InstanceCreator {
     }
 
     /**
-     * Adds new Conversation with author as current logged user.
+     * Adds new Conversation with expression with author as current logged user.
      *
-     * @param content Content of Conversation.
+     * @param content Content of Expression in Conversation.
      * @return Newly created Conversation.
      */
     public Conversation conversation(String content) {
@@ -1298,8 +1298,8 @@ public class V1InstanceCreator {
     /**
      * Adds new Conversation.
      *
-     * @param author Author of Conversation.
-     * @param content Content of Conversation.
+     * @param author Author of Expression in Conversation.
+     * @param content Content of Expression in Conversation.
      * @return Newly created Conversation.
      */
     public Conversation conversation(Member author, String content) {
@@ -1308,18 +1308,20 @@ public class V1InstanceCreator {
 
     /**
      * Adds new Conversation.
-     * @param author Author of Conversation.
-     * @param content Content of Conversation.
-     * @param attributes Additional attributes that should be set for Conversation.
+     * @param author Author of Expression in Conversation.
+     * @param content Content of Expression in Conversation.
+     * @param attributes Additional attributes that should be set for Conversation Expression.
      * @return Newly created Conversation
      */
     public Conversation conversation(Member author, String content, Map<String, Object> attributes) {
         Conversation conversation = new Conversation(instance);
-        conversation.setAuthor(author);
+        Expression expression = new Expression(instance);
         DateTime utcNow = new DateTime(DateTime.convertLocalToUtc(new Date()));
-        conversation.setAuthoredAt(utcNow);
-        conversation.setContent(content);
-        addAttributes(conversation, attributes);
+        expression.setAuthor(author);
+        expression.setAuthoredAt(utcNow);
+        expression.setContent(content);
+        conversation.getContainedExpressions().add(expression);
+        addAttributes(expression, attributes);
         conversation.save();
 
         return conversation;
@@ -1337,5 +1339,21 @@ public class V1InstanceCreator {
                 entity.set(pairs.getKey(), pairs.getValue());
             }
         }
+    }
+
+    /**
+     * Adds new Expression in Reply To an existing Expression.
+     * @param author Author of Expression.
+     * @param content Content of Expression.
+     * @param inReplyTo Expression being replied to.
+     * @return Newly created Conversation
+     */
+    public Expression expression(Member author, String content, Expression inReplyTo) {
+        Expression expression = new Expression(instance);
+        expression.setAuthor(author);
+        expression.setContent(content);
+        expression.setInReplyTo(inReplyTo);
+        expression.save();
+        return expression;
     }
 }

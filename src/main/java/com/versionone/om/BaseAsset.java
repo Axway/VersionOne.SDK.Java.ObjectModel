@@ -7,6 +7,7 @@ import com.versionone.om.filters.NoteFilter;
 
 import java.io.InputStream;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -80,7 +81,7 @@ public abstract class BaseAsset extends Entity {
     /**
      * @return Expressions that referenced to current item.
      */
-    public Collection<Conversation> getMentionedInExpressions() {
+    public Collection<Expression> getMentionedInExpressions() {
     	return getMultiRelation("MentionedInExpressions");
     }
 
@@ -294,29 +295,34 @@ public abstract class BaseAsset extends Entity {
     }
 
     /**
-     * Creates conversation which mentioned this asset.
+     * Creates conversation with an expression which mentioned this asset.
      *
-     * @param author Author of conversation.
-     * @param content Content of conversation.
+     * @param author Author of conversation expression.
+     * @param content Content of conversation expression.
      * @return Created conversation
      */
     public Conversation createConversation(Member author, String content) {
         Conversation conversation = getInstance().create().conversation(author, content);
-        conversation.getMentions().add(this);
+        Iterator<Expression> iterator = conversation.getContainedExpressions().iterator();
+        iterator.next().getMentions().add(this);
         conversation.save();
         return conversation;
     }
 
     /**
-     * Creates conversation which mentioned this asset.
-     * @param author Author of conversation.
-     * @param content Content of conversation.
-     * @param attributes additional attributes for the Conversation.
+     * Creates conversation with an expression which mentioned this asset.
+     * @param author Author of conversation expression.
+     * @param content Content of conversation expression.
+     * @param attributes additional attributes for the Expression in the Conversation.
      * @return Created conversation
      */
     public Conversation createConversation(Member author, String content, Map<String, Object> attributes) {
         Conversation conversation = getInstance().create().conversation(author, content, attributes);
-        conversation.getMentions().add(this);
+        Iterator<Expression> iterator = conversation.getContainedExpressions().iterator();
+        if (iterator.hasNext())
+        {
+            iterator.next().getMentions().add(this);
+        }
         conversation.save();
         return conversation;
     }

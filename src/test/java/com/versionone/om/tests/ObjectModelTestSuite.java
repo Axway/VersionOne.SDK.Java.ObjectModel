@@ -40,7 +40,7 @@ import org.junit.runners.Suite;
         EffortTester.class,
         EntityValidatorTester.class,
         AssetsStateTester.class,
-        ConversationTester.class,
+        ExpressionTester.class,
         RegressionPlanTester.class,
         EnvironmentTester.class,
         RegressionSuiteTester.class,
