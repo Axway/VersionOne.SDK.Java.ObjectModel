@@ -69,7 +69,7 @@ public class ExpressionFilterTester extends BaseSDKTester {
 
         Member secondMember = getEntityFactory().createMember("test2");
         Conversation secondConversation = createConversation(getInstance().getLoggedInMember(), "testing - #2");
-        Expression secondExpression = firstConversation.getContainedExpressions().iterator().next();
+        Expression secondExpression = secondConversation.getContainedExpressions().iterator().next();
         secondExpression.getMentions().add(secondMember);
         secondExpression.save();
 
@@ -103,13 +103,13 @@ public class ExpressionFilterTester extends BaseSDKTester {
     public void GetConversationByBaseAssets() {
         Story story = getEntityFactory().createStory("fly to the Moon using a magnet and will power", getSandboxProject());
         Conversation firstConversation = createConversation(getInstance().getLoggedInMember(), "testing - #1");
-        Expression firstExpression = firstConversation.getContainedExpressions().iterator().next();
+        Expression firstExpression = (Expression)firstConversation.getContainedExpressions().toArray()[0];
         firstExpression.getMentions().add(story);
         firstExpression.save();
 
         com.versionone.om.Test test = getEntityFactory().createTest("check the direction", story);
         Conversation secondConversation = createConversation(getInstance().getLoggedInMember(), "testing - #2");
-        Expression secondExpression = firstConversation.getContainedExpressions().iterator().next();
+        Expression secondExpression = (Expression)secondConversation.getContainedExpressions().toArray()[0];
         secondExpression .getMentions().add(test);
         secondExpression .save();
 

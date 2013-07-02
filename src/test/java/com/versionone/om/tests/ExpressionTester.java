@@ -36,8 +36,8 @@ public class ExpressionTester extends BaseSDKTester {
 		resetInstance();
 
 		Conversation newConversation = getInstance().get().conversationByID(conversation.getID());
-        Iterator<Expression> expressionIterator = newConversation.getContainedExpressions().iterator();
-        Expression expression = expressionIterator.next();
+        Collection<Expression> containedExpressions = newConversation.getContainedExpressions();
+        Expression expression = (Expression)containedExpressions.toArray()[0];
         Assert.assertEquals(author, expression.getAuthor());
 		Assert.assertEquals(conversationContent, expression.getContent());
 	}
@@ -51,14 +51,14 @@ public class ExpressionTester extends BaseSDKTester {
          resetInstance();
 
          Conversation newConversation = getInstance().get().conversationByID(conversation.getID());
-         Iterator<Expression> expressionIterator = newConversation.getContainedExpressions().iterator();
-         Expression expression = expressionIterator.next();
+         Collection<Expression> containedExpressions = newConversation.getContainedExpressions();
+         Expression expression = (Expression)containedExpressions.toArray()[0];
          Assert.assertEquals(getInstance().getLoggedInMember(), expression.getAuthor());
          Assert.assertEquals(conversationContent, expression.getContent());
      }
 
      @Test
-     public void deleteConversation() {
+     public void deleteConversationViaExpression() {
          Member currentUser = getInstance().getLoggedInMember();
          Conversation conversation = getInstance().create().conversation(currentUser, "A disposable conversation");
          conversation.save();
@@ -68,7 +68,7 @@ public class ExpressionTester extends BaseSDKTester {
          Conversation persistedConversation = getInstance().get().conversationByID(id);
          Assert.assertNotNull(persistedConversation);
 
-         conversation.delete();
+         ((Expression)persistedConversation.getContainedExpressions().toArray()[0]).delete();
 
          persistedConversation = getInstance().get().conversationByID(id);
          Assert.assertNull(persistedConversation);
@@ -84,20 +84,20 @@ public class ExpressionTester extends BaseSDKTester {
          Conversation persistedConversation = getInstance().get().conversationByID(id);
          Assert.assertNotNull(persistedConversation);
 
-         conversation.delete();
+         ((Expression)persistedConversation.getContainedExpressions().toArray()[0]).delete();
      }
 
      @Test
      public void mentionsReference() {
          Conversation conversation = createDisposableConversation(getInstance().getLoggedInMember(), "A disposable conversation");
-         Iterator<Expression> expressionIterator = conversation.getContainedExpressions().iterator();
-         Expression expression = expressionIterator.next();
+         Collection<Expression> containedExpressions = conversation.getContainedExpressions();
+         Expression expression = (Expression)containedExpressions.toArray()[0];
          expression.getMentions().add(getInstance().getLoggedInMember());
          expression.save();
 
          Conversation persistedConversation = getInstance().get().conversationByID(conversation.getID());
-         expressionIterator = persistedConversation.getContainedExpressions().iterator();
-         expression = expressionIterator.next();
+         containedExpressions = persistedConversation.getContainedExpressions();
+         expression = (Expression)containedExpressions.toArray()[0];
          ListAssert.contains(getInstance().getLoggedInMember(), expression.getMentions());
          ListAssert.contains(expression, getInstance().getLoggedInMember().getMentionedInExpressions());
      }
@@ -215,30 +215,6 @@ public class ExpressionTester extends BaseSDKTester {
          Iterator<Expression> expressionIterator = newConversation.getContainedExpressions().iterator();
          Expression expression = expressionIterator.next();
          Assert.assertEquals(newContent, expression.getContent());
-     }
-
-     @Test
-     public void createConversationThroughStoryWithAttributes() {
-         String conversationText = "Created through story";
-         Story story = getEntityFactory().createStory("Conversation Story", getInstance().get().projectByID(AssetID.fromToken("Scope:0")));
-         Conversation conversationParent = story.createConversation(getInstance().getLoggedInMember(), conversationText + "1");
-         Map<String, Object> attributes = new HashMap<String, Object>();
-         attributes.put("InReplyTo", conversationParent.getID().getToken());
-         Conversation conversation = story.createConversation(getInstance().getLoggedInMember(), conversationText + "2", attributes);
-         disposableConversations.add(conversationParent);
-         disposableConversations.add(conversation);
-         resetInstance();
-
-         Conversation newConversation = getInstance().get().conversationByID(conversation.getID());
-         Iterator<Expression> expressionIterator = newConversation.getContainedExpressions().iterator();
-         Expression expression = expressionIterator.next();
-         Assert.assertEquals(conversationText + "2", expression.getContent());
-         Assert.assertEquals(conversationParent, expression.getInReplyTo());
-         Assert.assertEquals(1, expression.getMentions().size());
-         ListAssert.contains(story, expression.getMentions());
-         Story newStory = getInstance().get().storyByID(story.getID());
-         Assert.assertEquals(2, newStory.getMentionedInExpressions().size());
-         ListAssert.contains(expression, newStory.getMentionedInExpressions());
      }
 
      @Test

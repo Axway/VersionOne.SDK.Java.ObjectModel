@@ -116,6 +116,12 @@ public class EntityCollection<D extends Entity> extends AbstractCollection<D> {
                 readAttributeName, null).iterator();
     }
 
+    @Override
+    public Object[] toArray() {
+        return instance.internalGetMultiRelation(entity,
+                readAttributeName, null).toArray();
+    }
+
     /**
      * Verification on read only status.
      *

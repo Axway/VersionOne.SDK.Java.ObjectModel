@@ -21,22 +21,4 @@ public class Conversation extends Entity {
     public Collection<Expression> getContainedExpressions() {
         return getMultiRelation("ContainedExpressions");
     }
-
-    /**
-     * @return True if the message can be deleted.
-     */
-    public boolean canDelete() {
-        return getInstance().canExecuteOperation(this, "Delete");
-    }
-
-    /**
-     * Deletes the conversation.
-     * NOTE: only owner can delete expression.
-     * @throws UnsupportedOperationException if the item is an invalid state for
-     *                                       the Operation.
-     */
-    public void delete() {
-        save();
-        getInstance().executeOperation(this, "Delete");
-    }
 }
