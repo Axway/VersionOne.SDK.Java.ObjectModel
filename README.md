@@ -4,11 +4,7 @@ All rights reserved.
 
 The ObjectModel library provide a strongly-typed model on top of the [VersionOne SDK.Java API Client library](https://github.com/versionone/VersionOne.SDK.Java.APIClient). This allows developers to easily and quickly develop VersionOne integrations and complementary applications/utilities using domain objects (Project, Story, Iteration, etc) instead of more abstract objects (Asset, Attribute). The ObjectModel is suitable for fine-grained access, such as creating new VersionOne assets.
 
-This product includes software developed at VersionOne 
-(http://versionone.com/). This product is open source and is licensed 
-under a modified BSD license, which reflects our intent that software 
-built with a dependency on the  VersionOne SDK.Java can be commercial or 
-open source, as the authors see fit.
+This product includes software developed at [VersionOne](http://versionone.com/). This product is open source and is licensed under a [modified BSD license](https://github.com/versionone/VersionOne.SDK.Java.ObjectModel/blob/master/LICENSE.md), which reflects our intent that software built with a dependency on the VersionOne SDK.Java can be commercial or open source, as the authors see fit.
 
 ## Table of Contents
 
