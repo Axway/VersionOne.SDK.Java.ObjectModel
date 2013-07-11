@@ -125,6 +125,12 @@
 			<artifactId>VersionOne.SDK.Java.APIClient</artifactId>
 			<version>13.0.0.146</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<organization>
 		<name>Version One, Inc.</name>
