@@ -18,5 +18,6 @@
       <item name="Access to API Client Internals" href="api_client.html"/>
       <item name="Tread Safety" href="thread_safety.html"/>
     </menu>
+    <menu ref="reports" />
   </body>
 </project>
