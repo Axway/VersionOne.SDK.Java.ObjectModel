@@ -5,16 +5,24 @@
 	<artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
 	<version>13.0.0</version>
 	<packaging>jar</packaging>
-	<name>VersionOne.SDK.Java.ObjectModel</name>
+	<name>VersionOne SDK.Java Object Model</name>
+	<description>A strongly-typed object model library on top of the VersionOne SDK.Java API Client library.</description>
 	<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
-	<description>VersionOne, Inc. Java Object Model</description>
+	<organization>
+		<name>Version One, Inc.</name>
+		<url>http://www.versionone.com/</url>
+	</organization>
 	<licenses>
 		<license>
-			<name>VersionOne, Inc.</name>
-			<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel/blob/master/LICENSE.md</url>
+			<name>Modified BSD (3-clause) License</name>
+			<url>https://raw.github.com/versionone/VersionOne.SDK.Java.ObjectModel/master/LICENSE.md</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel/issues</url>
+	</issueManagement>
 	<scm>
 		<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
 		<connection>scm:git:git@github.com:versionone/VersionOne.SDK.Java.ObjectModel.git</connection>
@@ -50,6 +58,18 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12.4</version>
 				<configuration>
@@ -63,12 +83,24 @@
 				</configuration>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.8</version>
 				<configuration>
 					<message>Creating site for ${project.artifactId} ${project.version}</message>
-					<!-- <dryRun>true</dryRun>  -->
+					<!-- <dryRun>true</dryRun> -->
 				</configuration>
 				<executions>
 					<execution>
@@ -79,6 +111,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 	<repositories>
@@ -103,6 +136,11 @@
 	</ciManagement>
 	<dependencies>
 		<dependency>
+			<groupId>com.versionone</groupId>
+			<artifactId>VersionOne.SDK.Java.APIClient</artifactId>
+			<version>13.0.0.146</version>
+		</dependency>
+		<dependency>
 			<groupId>org.fitnesse</groupId>
 			<artifactId>fitnesse</artifactId>
 			<version>20111025</version>
@@ -121,19 +159,22 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.versionone</groupId>
-			<artifactId>VersionOne.SDK.Java.APIClient</artifactId>
-			<version>13.0.0.146</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<organization>
-		<name>Version One, Inc.</name>
-		<url>http://www.versionone.com/</url>
-	</organization>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</reporting>
 </project>

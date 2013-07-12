@@ -2,7 +2,7 @@
     "id": "VersionOne.SDK.Java.ObjectModel",
     "titleSection": {
         "name": "VersionOne SDK.Java Object Model",
-        "shortDescription": "a library for custom Java development against the VersionOne Platform's REST-based API",
+        "shortDescription": "A strongly-typed object model library on top of the VersionOne SDK.Java API Client library.",
         "pricing": "Free",
         "support": {
             "text": "VersionOne",
@@ -20,7 +20,12 @@
         },
         {
             "type": "documentation",
-            "title": "README Documentation",
+            "title": "Documentation",
+            "href": "http://versionone.github.io/VersionOne.SDK.Java.ObjectModel/index.html"
+        },
+        {
+            "type": "documentation",
+            "title": "README",
             "href": "https://github.com/versionone/VersionOne.SDK.Java.ObjectModel/blob/master/README.md"
         },
         {
