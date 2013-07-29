@@ -1,10 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.versionone</groupId>
 	<artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
 	<version>13.0.0</version>
 	<packaging>jar</packaging>
+
 	<name>VersionOne SDK.Java Object Model</name>
 	<description>A strongly-typed object model library on top of the VersionOne SDK.Java API Client library.</description>
 	<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
@@ -17,6 +19,7 @@
 			<name>Modified BSD (3-clause) License</name>
 			<url>https://raw.github.com/versionone/VersionOne.SDK.Java.ObjectModel/master/LICENSE.md</url>
 			<distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
 		</license>
 	</licenses>
 	<issueManagement>
@@ -120,7 +123,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 		</plugins>
 	</build>
 	<repositories>

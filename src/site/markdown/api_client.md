@@ -1,0 +1,3 @@
+## Access to API Client Internals
+
+The `V1Instance` class contains a method named `getApiClient()` that exposes an ApiClient (com.versionone.om.V1Instance.ApiClientInternals) object. This gives you access to the underlying API Client connection that the V1Instance is sitting on top of. In the majority of scenarios, you will not need this access. If you do need an advanced capability that the Object Model does not supply, it is there for you.
