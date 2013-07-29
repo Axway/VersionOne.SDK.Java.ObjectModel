@@ -95,7 +95,18 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        
+        <div class="section"><h2>Getting Started<a name="Getting_Started"></a></h2><p>Add a reference to the VersionOne object model assembly, VersionOne.ObjectModel.jar. Next, add the following using statement(s) to your source file:</p>
+<div class="source"><pre>// for the basic object model
+import com.versionone.om.*;
+// if you need to use filtering in getting filtered subsets of relations or collections of assets
+import com.versionone.om.filters.*;
+</pre></div><p>The first step is to create a connection to the VersionOne system with a V1Instance object (com.versionone.om.V1Instance), passing VersionOne application connection information into its constructor:</p>
+<div class="source"><pre>V1Instance v1 = new V1Instance( url, username, password );
+</pre></div><p>Once you have a valid V1Instance, you can navigate the entire VersionOne system. For example, root-level projects are available by calling getProjects() on the V1Instance instance.</p>
+<div class="source"><pre>for(Project project : v1.getProjects())  {
+	System.out.writeline( project.getName());
+}
+</pre></div></div>
       </div>
     </div>
     <div class="clear">
