@@ -19,7 +19,7 @@ import com.versionone.om.listvalue.WorkitemSource;
 @MetaDataAttribute("Issue")
 public class Issue extends ProjectAsset {
 
-    private static final String END_DATE = "EndDate";
+    private static final String TARGET_DATE = "TargetDate";
 
     /**
      * Constructor used to represent an Issue entity that DOES exist in the
@@ -209,14 +209,14 @@ public class Issue extends ProjectAsset {
      * @return Date this Issue brings the system down to a screeching halt.
      */
     public DateTime getTargetDate() {
-        return new DateTime(get(END_DATE));
+        return new DateTime(get(TARGET_DATE));
     }
 
     /**
      * @param value Date this Issue brings the system down to a screeching halt.
      */
     public void setTargetDate(DateTime value) {
-        set(END_DATE, value.getDate());
+        set(TARGET_DATE, value.getDate());
     }
 
     /**
