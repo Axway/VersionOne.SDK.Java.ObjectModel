@@ -271,7 +271,7 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;136</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    IServices getServices() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;137</td>  <td class="nbHitsCovered">&nbsp;9901</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> apiClientInternals.getServices();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;137</td>  <td class="nbHitsCovered">&nbsp;9985</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> apiClientInternals.getServices();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;138</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;139</td>  <td class="nbHits">&nbsp;</td>
@@ -516,7 +516,7 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;282</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> ApiClientInternals getApiClient() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;283</td>  <td class="nbHitsCovered">&nbsp;36439</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> apiClientInternals;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;283</td>  <td class="nbHitsCovered">&nbsp;36504</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> apiClientInternals;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;284</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;285</td>  <td class="nbHits">&nbsp;</td>
@@ -659,18 +659,18 @@
 <tr>  <td class="numLineCover">&nbsp;376</td>  <td class="nbHitsCovered">&nbsp;648</td>  <td class="src"><pre class="src">&nbsp;        List&lt;T&gt; members = <span class="keyword">new</span> LinkedList&lt;T&gt;();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;377</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;378</td>  <td class="nbHitsCovered"><a title="Line 378: Conditional coverage 100% (2/2).">&nbsp;88311</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 378: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (Asset asset : assets) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;379</td>  <td class="nbHitsCovered">&nbsp;87663</td>  <td class="src"><pre class="src">&nbsp;            AssetID id = <span class="keyword">new</span> AssetID(asset.getOid().getToken());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;380</td>  <td class="nbHitsCovered">&nbsp;87663</td>  <td class="src"><pre class="src">&nbsp;            setAsset(id, asset);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;381</td>  <td class="nbHitsCovered">&nbsp;87663</td>  <td class="src"><pre class="src">&nbsp;            T wrapped = createWrapper(clazz, id, <span class="keyword">false</span>);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;378</td>  <td class="nbHitsCovered"><a title="Line 378: Conditional coverage 100% (2/2).">&nbsp;88310</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 378: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (Asset asset : assets) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;379</td>  <td class="nbHitsCovered">&nbsp;87662</td>  <td class="src"><pre class="src">&nbsp;            AssetID id = <span class="keyword">new</span> AssetID(asset.getOid().getToken());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;380</td>  <td class="nbHitsCovered">&nbsp;87662</td>  <td class="src"><pre class="src">&nbsp;            setAsset(id, asset);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;381</td>  <td class="nbHitsCovered">&nbsp;87662</td>  <td class="src"><pre class="src">&nbsp;            T wrapped = createWrapper(clazz, id, <span class="keyword">false</span>);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;382</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;383</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="comment">// we could get an asset from a query that has no SDK wrapper, skip</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;384</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="comment">// it here</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;385</td>  <td class="nbHitsCovered"><a title="Line 385: Conditional coverage 100% (2/2).">&nbsp;87663</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 385: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (wrapped != <span class="keyword">null</span>) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;386</td>  <td class="nbHitsCovered">&nbsp;87537</td>  <td class="src"><pre class="src">&nbsp;                members.add(wrapped);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;385</td>  <td class="nbHitsCovered"><a title="Line 385: Conditional coverage 100% (2/2).">&nbsp;87662</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 385: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (wrapped != <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;386</td>  <td class="nbHitsCovered">&nbsp;87536</td>  <td class="src"><pre class="src">&nbsp;                members.add(wrapped);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;387</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;388</td>  <td class="nbHits">&nbsp;</td>
@@ -907,7 +907,7 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;532</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Asset getAsset(Oid oid) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;533</td>  <td class="nbHitsCovered">&nbsp;3013</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAsset(<span class="keyword">new</span> AssetID(oid.getToken()), oid.getAssetType().getToken());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;533</td>  <td class="nbHitsCovered">&nbsp;3097</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAsset(<span class="keyword">new</span> AssetID(oid.getToken()), oid.getAssetType().getToken());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;534</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;535</td>  <td class="nbHits">&nbsp;</td>
@@ -926,7 +926,7 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;542</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Asset getAsset(Entity entity) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;543</td>  <td class="nbHitsCovered">&nbsp;21804</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAsset(entity.getInstanceKey(), getAssetTypeToken(entity.getClass()));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;543</td>  <td class="nbHitsCovered">&nbsp;21819</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAsset(entity.getInstanceKey(), getAssetTypeToken(entity.getClass()));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;544</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;545</td>  <td class="nbHits">&nbsp;</td>
@@ -949,10 +949,10 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;554</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Asset getAsset(Object id, String assetTypeToken) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;555</td>  <td class="nbHitsCovered">&nbsp;24817</td>  <td class="src"><pre class="src">&nbsp;        Asset result = assetCache.get(id);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;555</td>  <td class="nbHitsCovered">&nbsp;24916</td>  <td class="src"><pre class="src">&nbsp;        Asset result = assetCache.get(id);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;556</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;557</td>  <td class="nbHitsCovered"><a title="Line 557: Conditional coverage 100% (2/2).">&nbsp;24817</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 557: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (result == <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;557</td>  <td class="nbHitsCovered"><a title="Line 557: Conditional coverage 100% (2/2).">&nbsp;24916</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 557: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (result == <span class="keyword">null</span>) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;558</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;559</td>  <td class="nbHitsCovered">&nbsp;1909</td>  <td class="src"><pre class="src">&nbsp;                IAssetType assetType = getMetaModel().getAssetType(</pre></td></tr>
@@ -975,7 +975,7 @@
 <tr>  <td class="numLineCover">&nbsp;572</td>  <td class="nbHitsCovered">&nbsp;1909</td>  <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;573</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;574</td>  <td class="nbHitsCovered">&nbsp;24817</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;574</td>  <td class="nbHitsCovered">&nbsp;24916</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;575</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;576</td>  <td class="nbHits">&nbsp;</td>
@@ -994,15 +994,15 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;583</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Asset getAsset(Object id) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;584</td>  <td class="nbHitsCovered">&nbsp;7936</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> assetCache.get(id);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;584</td>  <td class="nbHitsCovered">&nbsp;7953</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> assetCache.get(id);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;585</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;586</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;587</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">void</span> setAsset(Object id, Asset asset) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;588</td>  <td class="nbHitsCovered">&nbsp;95846</td>  <td class="src"><pre class="src">&nbsp;        assetCache.put(id, asset);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;589</td>  <td class="nbHitsCovered">&nbsp;95846</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;588</td>  <td class="nbHitsCovered">&nbsp;95845</td>  <td class="src"><pre class="src">&nbsp;        assetCache.put(id, asset);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;589</td>  <td class="nbHitsCovered">&nbsp;95845</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;590</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;591</td>  <td class="nbHits">&nbsp;</td>
@@ -1025,13 +1025,13 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;602</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> Entity&gt; String getAssetTypeToken(Class&lt;T&gt; entityType) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;603</td>  <td class="nbHitsCovered">&nbsp;23339</td>  <td class="src"><pre class="src">&nbsp;        MetaDataAttribute attribute = entityType</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;603</td>  <td class="nbHitsCovered">&nbsp;23354</td>  <td class="src"><pre class="src">&nbsp;        MetaDataAttribute attribute = entityType</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;604</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                .getAnnotation(MetaDataAttribute.<span class="keyword">class</span>);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;605</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;606</td>  <td class="nbHitsUncovered"><a title="Line 606: Conditional coverage 50% (1/2).">&nbsp;23339</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 606: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (attribute != <span class="keyword">null</span>) {</a></span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;607</td>  <td class="nbHitsCovered">&nbsp;23339</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> attribute.value();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;606</td>  <td class="nbHitsUncovered"><a title="Line 606: Conditional coverage 50% (1/2).">&nbsp;23354</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 606: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (attribute != <span class="keyword">null</span>) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;607</td>  <td class="nbHitsCovered">&nbsp;23354</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> attribute.value();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;608</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;609</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        <span class="keyword">throw</span> <span class="keyword">new</span> SDKException(<span class="string">"Missing MetaDataAttribute on type "</span></span></pre></td></tr>
@@ -1052,7 +1052,7 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> &lt;T <span class="keyword">extends</span> Entity&gt; T createWrapper(Class&lt;T&gt; clazz, AssetID id,</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;618</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                               <span class="keyword">boolean</span> validate) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;619</td>  <td class="nbHitsCovered">&nbsp;88955</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> wrapperManager.create(clazz, id, validate);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;619</td>  <td class="nbHitsCovered">&nbsp;88954</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> wrapperManager.create(clazz, id, validate);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;620</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;621</td>  <td class="nbHits">&nbsp;</td>
@@ -1061,36 +1061,36 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Attribute retrieveAttribute(Oid oid, IAttributeDefinition def,</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;623</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        <span class="keyword">boolean</span> cachable) <span class="keyword">throws</span> SDKException {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;624</td>  <td class="nbHitsCovered">&nbsp;3537</td>  <td class="src"><pre class="src">&nbsp;        Query query = <span class="keyword">new</span> Query(oid);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;625</td>  <td class="nbHitsCovered">&nbsp;3537</td>  <td class="src"><pre class="src">&nbsp;        query.getSelection().add(def);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;624</td>  <td class="nbHitsCovered">&nbsp;3621</td>  <td class="src"><pre class="src">&nbsp;        Query query = <span class="keyword">new</span> Query(oid);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;625</td>  <td class="nbHitsCovered">&nbsp;3621</td>  <td class="src"><pre class="src">&nbsp;        query.getSelection().add(def);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;626</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        QueryResult queryResult;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;627</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;628</td>  <td class="nbHitsCovered">&nbsp;3537</td>  <td class="src"><pre class="src">&nbsp;            queryResult = getServices().retrieve(query);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;629</td>  <td class="nbHitsCovered">&nbsp;3537</td>  <td class="src"><pre class="src">&nbsp;            Asset asset = queryResult.getAssets()[0];</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;628</td>  <td class="nbHitsCovered">&nbsp;3621</td>  <td class="src"><pre class="src">&nbsp;            queryResult = getServices().retrieve(query);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;629</td>  <td class="nbHitsCovered">&nbsp;3621</td>  <td class="src"><pre class="src">&nbsp;            Asset asset = queryResult.getAssets()[0];</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;630</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;631</td>  <td class="nbHitsCovered"><a title="Line 631: Conditional coverage 100% (2/2).">&nbsp;3521</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 631: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (!cachable) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;631</td>  <td class="nbHitsCovered"><a title="Line 631: Conditional coverage 100% (2/2).">&nbsp;3605</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 631: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (!cachable) {</a></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;632</td>  <td class="nbHitsCovered">&nbsp;516</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> asset.getAttribute(def);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;633</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;634</td>  <td class="nbHitsCovered">&nbsp;3005</td>  <td class="src"><pre class="src">&nbsp;            Asset cached = getAsset(asset.getOid());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;635</td>  <td class="nbHitsCovered">&nbsp;3005</td>  <td class="src"><pre class="src">&nbsp;            Attribute attribute = cached.ensureAttribute(def);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;634</td>  <td class="nbHitsCovered">&nbsp;3089</td>  <td class="src"><pre class="src">&nbsp;            Asset cached = getAsset(asset.getOid());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;635</td>  <td class="nbHitsCovered">&nbsp;3089</td>  <td class="src"><pre class="src">&nbsp;            Attribute attribute = cached.ensureAttribute(def);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;636</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;637</td>  <td class="nbHitsUncovered"><a title="Line 637: Conditional coverage 50% (1/2).">&nbsp;3005</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 637: Conditional coverage 50% (1/2).">            <span class="keyword">if</span> (def.isMultiValue()) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;637</td>  <td class="nbHitsUncovered"><a title="Line 637: Conditional coverage 50% (1/2).">&nbsp;3089</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 637: Conditional coverage 50% (1/2).">            <span class="keyword">if</span> (def.isMultiValue()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;638</td>  <td class="nbHitsUncovered"><a title="Line 638: Conditional coverage 0% (0/2).">&nbsp;0</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 638: Conditional coverage 0% (0/2).">                <span class="keyword">for</span> (Object value : asset.getAttribute(def).getValues()) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;639</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                    cached.loadAttributeValue(def, value);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;640</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;641</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            } <span class="keyword">else</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;642</td>  <td class="nbHitsCovered">&nbsp;3005</td>  <td class="src"><pre class="src">&nbsp;                cached.loadAttributeValue(def, asset.getAttribute(def).getValue());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;642</td>  <td class="nbHitsCovered">&nbsp;3089</td>  <td class="src"><pre class="src">&nbsp;                cached.loadAttributeValue(def, asset.getAttribute(def).getValue());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;643</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;644</td>  <td class="nbHitsCovered">&nbsp;3005</td>  <td class="src"><pre class="src">&nbsp;            attribute.acceptChanges();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;645</td>  <td class="nbHitsCovered">&nbsp;3005</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> attribute;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;644</td>  <td class="nbHitsCovered">&nbsp;3089</td>  <td class="src"><pre class="src">&nbsp;            attribute.acceptChanges();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;645</td>  <td class="nbHitsCovered">&nbsp;3089</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> attribute;</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;646</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (V1Exception e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;647</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> SDKException(e);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;648</td>  <td class="nbHits">&nbsp;</td>
@@ -1101,18 +1101,18 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;651</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> Attribute getAttribute(Entity entity, String name, <span class="keyword">boolean</span> cachable) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;652</td>  <td class="nbHitsCovered">&nbsp;9252</td>  <td class="src"><pre class="src">&nbsp;        Asset asset = getAsset(entity);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;653</td>  <td class="nbHitsCovered">&nbsp;9252</td>  <td class="src"><pre class="src">&nbsp;        IAttributeDefinition def = asset.getAssetType().getAttributeDefinition(</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;652</td>  <td class="nbHitsCovered">&nbsp;9267</td>  <td class="src"><pre class="src">&nbsp;        Asset asset = getAsset(entity);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;653</td>  <td class="nbHitsCovered">&nbsp;9267</td>  <td class="src"><pre class="src">&nbsp;        IAttributeDefinition def = asset.getAssetType().getAttributeDefinition(</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;654</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                name);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;655</td>  <td class="nbHitsCovered"><a title="Line 655: Conditional coverage 100% (2/2).">&nbsp;9252</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 655: Conditional coverage 100% (2/2).">        Attribute attribute = cachable ? asset.getAttribute(def) : <span class="keyword">null</span>;</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;655</td>  <td class="nbHitsCovered"><a title="Line 655: Conditional coverage 100% (2/2).">&nbsp;9267</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 655: Conditional coverage 100% (2/2).">        Attribute attribute = cachable ? asset.getAttribute(def) : <span class="keyword">null</span>;</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;656</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;657</td>  <td class="nbHitsCovered"><a title="Line 657: Conditional coverage 100% (2/2).">&nbsp;9252</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 657: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (attribute == <span class="keyword">null</span>) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;658</td>  <td class="nbHitsCovered">&nbsp;3251</td>  <td class="src"><pre class="src">&nbsp;            attribute = retrieveAttribute(asset.getOid(), def, cachable);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;657</td>  <td class="nbHitsCovered"><a title="Line 657: Conditional coverage 100% (2/2).">&nbsp;9267</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 657: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (attribute == <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;658</td>  <td class="nbHitsCovered">&nbsp;3335</td>  <td class="src"><pre class="src">&nbsp;            attribute = retrieveAttribute(asset.getOid(), def, cachable);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;659</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;660</td>  <td class="nbHitsCovered">&nbsp;9236</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> attribute;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;660</td>  <td class="nbHitsCovered">&nbsp;9251</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> attribute;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;661</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;662</td>  <td class="nbHits">&nbsp;</td>
@@ -1213,7 +1213,7 @@
   <td class="src"><pre class="src">&nbsp;                       <span class="keyword">boolean</span> cachable) <span class="keyword">throws</span> SDKException {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;723</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;724</td>  <td class="nbHitsCovered">&nbsp;9135</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> getAttribute(entity, name, cachable).getValue();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;724</td>  <td class="nbHitsCovered">&nbsp;9150</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> getAttribute(entity, name, cachable).getValue();</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;725</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (APIException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;726</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> SDKException(</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;727</td>  <td class="nbHits">&nbsp;</td>
@@ -1814,6 +1814,6 @@
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 7/29/13 7:41 PM.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 8/22/13 7:21 PM.</div>
 </body>
 </html>
