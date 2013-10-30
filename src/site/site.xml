@@ -16,7 +16,7 @@
       <item name="Rank-Ordering and Changing RankOrder" href="rank_order.html"/>
       <item name="Tracking Levels, Estimates and Effort Tracking" href="tracking_levels.html"/>
       <item name="Access to API Client Internals" href="api_client.html"/>
-      <item name="Tread Safety" href="thread_safety.html"/>
+      <item name="Thread Safety" href="thread_safety.html"/>
     </menu>
     <menu ref="reports" />
   </body>
