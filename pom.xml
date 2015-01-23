@@ -4,7 +4,7 @@
 
 	<groupId>com.versionone</groupId>
 	<artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
-	<version>13.0.2-SNAPSHOT</version>
+	<version>13.0.2-AXWAY-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>VersionOne SDK.Java Object Model</name>
