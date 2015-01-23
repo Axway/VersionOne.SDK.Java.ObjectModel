@@ -14,6 +14,7 @@ local.properties
 
 ## InteliJ IDEA Files ##
 .idea/
+VersionOne.SDK.Java.ObjectModel.iml
 
 ## Maven Files ##
 target/
