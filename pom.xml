@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.versionone</groupId>
 	<artifactId>VersionOne.SDK.Java.ObjectModel</artifactId>
-	<version>13.0.2-AXWAY-SNAPSHOT</version>
+	<version>13.0.2-AXWAY-1</version>
 	<packaging>jar</packaging>
 
 	<name>VersionOne SDK.Java Object Model</name>
@@ -27,10 +27,11 @@
 		<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel/issues</url>
 	</issueManagement>
 	<scm>
-		<url>https://github.com/versionone/VersionOne.SDK.Java.ObjectModel</url>
-		<connection>scm:git:git@github.com:versionone/VersionOne.SDK.Java.ObjectModel.git</connection>
-		<developerConnection>scm:git:git@github.com:versionone/VersionOne.SDK.Java.ObjectModel.git</developerConnection>
-	</scm>
+		<url>git@github.com:Axway/VersionOne.SDK.Java.ObjectModel.git</url>
+		<connection>scm:git:git@github.com:Axway/VersionOne.SDK.Java.ObjectModel.git</connection>
+		<developerConnection>scm:git:git@github.com:Axway/VersionOne.SDK.Java.ObjectModel.git</developerConnection>
+	<tag>13.0.2-AXWAY-1</tag>
+</scm>
 	<developers>
 		<developer>
 			<name>Ian Buchanan</name>
@@ -182,7 +183,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
