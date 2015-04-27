@@ -2,7 +2,7 @@
 Copyright (c) 2008-2015 VersionOne, Inc.
 All rights reserved.
 
-**The VersionOne Java Object Model has been deprecated as of the Spring 2015 release of VersionOne and is no longer supported. It is now open-sourced and supported by the development community. Please see [VersionOne Java SDK](http://appcatalog.versionone.com/VersionOne.SDK.Java.APIClient) for an alternative API library.**
+**The VersionOne Java Object Model has been deprecated as of the Spring 2015 release of VersionOne and is no longer supported by VersionOne. It is now open-sourced and supported by the development community. Please see [VersionOne Java SDK](http://appcatalog.versionone.com/VersionOne.SDK.Java.APIClient) for an alternative API library.**
 
 The ObjectModel library provide a strongly-typed model on top of the [VersionOne SDK.Java API Client library](https://github.com/versionone/VersionOne.SDK.Java.APIClient). This allows developers to easily and quickly develop VersionOne integrations and complementary applications/utilities using domain objects (Project, Story, Iteration, etc) instead of more abstract objects (Asset, Attribute). The ObjectModel is suitable for fine-grained access, such as creating new VersionOne assets.
 
